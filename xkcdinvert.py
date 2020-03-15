@@ -7,7 +7,7 @@ import numpy as np
 import imageio
 from PIL import Image
 import colorsys
-
+import sys
 
 def toFloat(i):
     return i / 0xFF
@@ -18,7 +18,9 @@ def to255(i):
 
 
 def main():
-    image = Image.open("xkcd.png")
+    uri = sys.argv[1]
+
+    image = Image.open(uri)
     nparray = np.array(image)
     array = nparray.tolist()
     del nparray
