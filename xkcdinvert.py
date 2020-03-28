@@ -18,7 +18,11 @@ def to255(i):
 
 
 def main():
-    uri = sys.argv[1]
+    if (sys.argv.__len__() > 1):
+        uri = sys.argv[1]
+    else:
+        uri = "xkcd.png"
+        
 
     image = Image.open(uri)
     nparray = np.array(image)
