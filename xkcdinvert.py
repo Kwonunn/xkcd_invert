@@ -1,5 +1,4 @@
-# This program takes an image, and inverts every pixel that is pure grayscale. Colored pixels are left alone.
-# Meant to make reading xkcd at night more pleasant
+# This program inverts xkcd comic images by swapping around the s and v values in HSV color space.
 
 # By Kwonunn 2020
 
@@ -23,8 +22,7 @@ def main():
     else:
         uri = "xkcd.png"
         
-
-    image = Image.open(uri)
+    image = Image.open(uri).convert("RGB")
     nparray = np.array(image)
     array = nparray.tolist()
     del nparray
